@@ -1,33 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arabic RAG Chatbot - UI
 
-## Getting Started
+This is the **frontend interface** for the Arabic RAG Chatbot project. It provides a clean, interactive web UI to communicate with a **Retrieval-Augmented Generation (RAG) chatbot** using an underlying FastAPI backend. The UI supports **Arabic text**, real-time streaming responses, and session-based chat history.
 
-First, run the development server:
+---
+
+## Features
+
+- **Interactive Chat:** Type your questions in Arabic and get responses from the RAG-powered assistant.  
+- **Streaming Responses:** Messages appear in real-time with a "جارٍ الكتابة" typing animation.  
+- **Markdown Support:** Responses from the chatbot can include formatted text rendered with Markdown.  
+- **Session Management:** Each browser tab maintains a unique session ID to keep chat history separate.  
+- **Clear Chat:** Reset the conversation anytime using the "مسح الدردشة" button.  
+- **RTL Support:** Fully supports right-to-left Arabic text layout.
+
+---
+
+## Tech Stack
+
+- **Frontend:** React (Next.js) with TypeScript  
+- **Styling:** Tailwind CSS  
+- **Markdown Rendering:** `react-markdown`  
+- **Backend Integration:** Connects to a FastAPI backend via streaming endpoints
+
+---
+
+## Setup
+
+1. **Clone the repository:**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/arabic-rag-chatbot-ui.git
+cd arabic-rag-chatbot-ui
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Configure API endpoint:
+- Open pages/index.tsx (or the main component file)
+- Replace the placeholder URL with your FastAPI backend endpoint:
+```ts
+const API_URL = "https://your-fastapi-backend.com";
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Run the development server:
+```bash
+npm run dev
+```
 
 ## Deploy on Vercel
 
